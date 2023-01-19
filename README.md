@@ -5,7 +5,7 @@ The purpose of the analysis is to create machine learning models to evaluate the
 
 ## Results
 
-* Random Oversampler
+* Random Oversampler - instances of the minority class are randomly selected and added to the training set until the majority and minority classes are balanced
   * Balanced Accuracy Score of 0.65. This reflects a fairly strong possibility of accuaracy.
 
     ![randomoversampler](https://user-images.githubusercontent.com/110419577/213518140-b521433b-41c5-4755-a44a-de7c46365e4b.png)
@@ -18,7 +18,9 @@ The purpose of the analysis is to create machine learning models to evaluate the
   ![randomoversampler_imbalanced](https://user-images.githubusercontent.com/110419577/213519014-c647358d-8dd6-486b-90ea-81773e881724.png)
 
 
-* SMOTE Oversampling
+* SMOTE Oversampling - In SMOTE, like random oversampling, the size of the minority is increased. The key difference between the two lies in how the minority class is increased in size. As we have seen, in random oversampling, instances from the minority class are randomly selected and added to the minority class. In SMOTE, by contrast, new instances are interpolated. That is, for an instance from the minority class, a number of its closest neighbors is chosen. Based on the values of these neighbors, new values are created.
+
+
   * Balanced Accuracy Score of 0.65. This reflects a fairly strong possibility of accuaracy.
 
 ![SMOTE_balanced](https://user-images.githubusercontent.com/110419577/213525352-1d194bf6-7d8c-43ae-b603-b5c70db91a4a.png)
@@ -29,22 +31,23 @@ The purpose of the analysis is to create machine learning models to evaluate the
 
   ![SMOTE_imbalanced](https://user-images.githubusercontent.com/110419577/213525364-bd1833fb-001b-466c-99b6-8e16c657b8b8.png)
 
-* Cluster Centroids Resampler (Undersampling)
+* Cluster Centroids Resampler (Undersampling) - Cluster centroid undersampling is akin to SMOTE. The algorithm identifies clusters of the majority class, then generates synthetic data points, called centroids, that are representative of the clusters. The majority class is then undersampled down to the size of the minority class.
   * Balanced Accuracy Scores
   * Precision Scores
   * Recall Scores
 
-* SMOTEENN (Combination Sampling)
+* SMOTEENN (Combination Sampling) - Oversample the minority class with SMOTE. Clean the resulting data with an undersampling strategy. If the two nearest neighbors of a data point belong to two different classes, that data point is dropped.
   * Balanced Accuracy Scores
   * Precision Scores
   * Recall Scores
 
-* Balanced Random Forest Classifier
+* Balanced Random Forest Classifier - In random undersampling, randomly selected instances from the majority class are removed until the size of the majority class is reduced, typically to that of the minority class. 
   * Balanced Accuracy Scores
   * Precision Scores
   * Recall Scores
 
-* Easy Ensemble AdaBoost Classifier
+* Easy Ensemble AdaBoost Classifier - These simple trees are weak learners because they are created by randomly sampling the data and creating a decision tree for only that small portion of data. And since they are trained on a small piece of the original data, they are only slightly better than a random guess. However, many slightly better than average small decision trees can be combined to create a strong learner, which has much better decision-making power.
+
   * Balanced Accuracy Scores
   * Precision Scores
   * Recall Scores
