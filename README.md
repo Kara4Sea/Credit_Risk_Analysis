@@ -6,9 +6,17 @@ The purpose of the analysis is to create machine learning models to evaluate the
 ## Results
 
 * Random Oversampler
-  * Balanced Accuracy Scores
-  * Precision Scores
-  * Recall Scores
+  * Balanced Accuracy Score of 0.65. This reflects a fairly strong possibility of accuaracy.
+
+    ![randomoversampler](https://user-images.githubusercontent.com/110419577/213518140-b521433b-41c5-4755-a44a-de7c46365e4b.png)
+
+
+  * Precision Score - The precision score has a weighted average of 0.99, which at first glance shows an almost definite possibility of true positive results. However when we break this down further and inspect the high_risk results, they only have a precision score of 0.01, while low_risk is at 0.99. THis indicates that those evaluated for low_risk are almost certaintly low risk candidate. While those evaluated at high_risk are unlikely to be high risk candidates. 
+  
+  * Recall Score - The recall score has a weighted average of 0.65, with consistency in results accross the high_risk (0.66) and low_risk (0.65) groups. This indicates that the test is fairly strong in determining candidates with high risk and low risk. 
+  
+  ![randomoversampler_imbalanced](https://user-images.githubusercontent.com/110419577/213519014-c647358d-8dd6-486b-90ea-81773e881724.png)
+
 
 * SMOTE Oversampling
   * Balanced Accuracy Scores
