@@ -42,6 +42,7 @@ The purpose of the analysis is to create machine learning models to evaluate the
 ![cluster_imbalanced](https://user-images.githubusercontent.com/110419577/213534183-fe036965-9b1e-42e6-926e-176d3c07f58c.png)
 
 * SMOTEENN (Combination Sampling) - Oversample the minority class with SMOTE. Clean the resulting data with an undersampling strategy. If the two nearest neighbors of a data point belong to two different classes, that data point is dropped.
+
   * Balanced Accuracy Score of 0.61. This reflects a fairly strong possibility of accuaracy.
 
 ![SMOTEENN_balanced](https://user-images.githubusercontent.com/110419577/213534626-ffe12996-02d4-4023-b100-ad85de84d3f2.png)
@@ -50,7 +51,6 @@ The purpose of the analysis is to create machine learning models to evaluate the
   * Recall Score - The recall score has a weighted average of 0.61, with consistency in results accross the high_risk (0.61) and low_risk (0.61) groups. This indicates that the test is fairly strong in determining candidates with high risk and low risk.
 
 ![SMOTEENN_imbalanced](https://user-images.githubusercontent.com/110419577/213534645-03a1334e-14fc-4bd4-9f28-14dde40e0f70.png)
-
 
 * Balanced Random Forest Classifier - In random undersampling, randomly selected instances from the majority class are removed until the size of the majority class is reduced, typically to that of the minority class. 
   * Balanced Accuracy Score of 0.79. This reflects a strong possibility of accuaracy.
@@ -76,3 +76,8 @@ The purpose of the analysis is to create machine learning models to evaluate the
 
 
 ## Summary
+Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. If you do not recommend any of the models, justify your reasoning.
+
+There is a variety of results in the balanced accuracy report with Cluster Centroids at the lowest (0.43) and Easy Ensemble AdaBoost Classifier at the highest (0.93). Overall the results of the machine learning models reflect a weak point in capturing a strong precision score, with the Easy Ensemble AdaBoost Classifier showing the strongest precison score at a weighted average of 0.99, and at 0.09 for high_risk and 1.00 for low_risk. Several precision scores are tied for weakest with a weighted average of 0.99, and at 0.01 for high_risk and 0.99 for low_risk. The Recall results showed a variety of results from weak to strong.  Cluster Centroids was the weakest with a weighted average of 0.43, and at 0.62 for high_risk and 0.43 for low_risk. Easy Ensemble AdaBoost Classifier at the strongest with a weighted average of 0.94, and at 0.92 for high_risk and 0.94 for low_risk.
+
+I recommend the use of the Easy Ensemble AdaBoost Classifier model as it had the overall strongest results for balanced accuracy, precsion score and recall score.
